@@ -64,8 +64,8 @@ export class ClassService {
                 pageNumber: pageNumber,
                 sort,
                 order,
-                ...(status !== undefined && { status }),
-                ...(search !== undefined && { name: search }),
+                ...(status !== undefined && status !== null && { status }),
+                ...(search !== undefined && search !== null && { name: search }),
             }
         }).pipe(
             tap((response) => {
@@ -131,7 +131,7 @@ export class ClassService {
     approveClass(id: string) {
         return this.classes$.pipe(
             take(1),
-            switchMap((classes) => this._httpClient.put<Class>(this.baseUrl + '/api/classes/' + id, { status: 'In Progress' }).pipe(
+            switchMap((classes) => this._httpClient.put<Class>(this.baseUrl + '/api/classes/' + id, { status: 'Opening' }).pipe(
                 map((updatedClass) => {
 
                     // Find and replace updated class

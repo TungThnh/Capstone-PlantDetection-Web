@@ -9,7 +9,7 @@ import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { ClassStudent } from 'app/types/class-student.type';
 import { Class } from 'app/types/class.type';
 import { Pagination } from 'app/types/pagination.type';
-import { ClassService } from '../claass.service';
+import { ClassService } from '../class.service';
 import { FuseAlertComponent } from '@fuse/components/alert';
 
 @Component({
